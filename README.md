@@ -9,7 +9,10 @@ text-classification-api
 ├── app
 │   ├── main.py               # Entry point of the API
 │   ├── models
-│   │   └── model.py          # Model loading and management
+│   │   ├── model.py          # Model loading and management
+|   |   ├── llm_model.py      # LLM Model loading and management
+|   |   └── saved_models
+|   |       └── saved_model.h5 # Trained model (TF one layer NN)
 │   ├── preprocessing
 │   │   └── preprocess.py      # Text preprocessing functions
 │   └── inference
@@ -20,6 +23,20 @@ text-classification-api
 ├── .gitignore                 # Files to ignore in git
 └── README.md                  # Project documentation
 ```
+
+## Solutions
+
+### Preprocessing
+
+A preprocessing module has been added to preprocess the input text. This module remove special characters, urls, emailes, dates and normalizes the text.
+
+### Classification
+
+3 solutions have been developed:
+
+  - Baseline model: It uses a HuggingFace Pipeline (pretrained model) that directly classifies the text.
+  - Embedding model: This model creates embeddings from the text using the model all-MiniLM-L6-v2 (can be changed). Then,  the embeddings are fed into a 1 layer NN to classify it.
+  - LLM model: It uses an LLM (GPT or Gemini) to classify directly the text.
 
 ## Setup Instructions
 
@@ -88,7 +105,7 @@ AZURE_OPENAI_API_VERSION="api-version"
 AZURE_OPENAI_CHAT_VERSION="chat-version"
 
 For the Gemini model:
-GOOGLE_APPLICATION_CREDENTIALS="path/to/credential-json"
+GOOGLE_APPLICATION_CREDENTIALS="path/to/credentials.json"
 
 ### Endpoints
 
