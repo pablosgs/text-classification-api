@@ -49,7 +49,7 @@ If you want to choose the model to be used for the classification, add to the re
   - For the embedding model: "Embedding" -> {"text": "Texto de ejemplo", "model": "Embedding"}
   - For the Gemini model: "Gemini" -> {"text": "Texto de ejemplo", "model": "Gemini"}
   - For the GPT model: "GPT" -> {"text": "Texto de ejemplo", "model": "GPT"}
-  - For the Baseline model: "Baseline" -> {"text": "Texto de ejemplo", "model": "Gemini"}
+  - For the Baseline model: "Baseline" -> {"text": "Texto de ejemplo", "model": "Baseline"}
 
   If no model is chosen, the API will use the baseline model.
 
@@ -92,8 +92,6 @@ GOOGLE_APPLICATION_CREDENTIALS="path/to/credential-json"
 
 ### Endpoints
 
-
-
 - **POST /predict**
   - Description: Classifies the input text.
   - Request Body: 
@@ -103,6 +101,7 @@ GOOGLE_APPLICATION_CREDENTIALS="path/to/credential-json"
       "model": "Baseline"
     }
     **Disclaimer:** If the `model` parameter is not provided, the API will default to using the Baseline model for classification.
+    **Disclaimer:** If the `model` parameter is "Embedding", a pretrained model is needed at the path "~/text-classification-api/app/models/saved_models/saved_model.h5". In order to train it, you can use the train_model function of TextClassificationModel. You would need a dataset to do it.
     ```
   - Response: 
     ```json
