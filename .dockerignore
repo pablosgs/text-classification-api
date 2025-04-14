@@ -1,0 +1,25 @@
+# Ignore the Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore the virtual environment directory
+venv/
+env/
+.venv
+
+# Ignore the Dockerfile itself
+Dockerfile
+
+# Ignore any local configuration files
+*.local
+*.env
+
+# Ignore any logs
+*.log
+
+# Ignore any test files
+tests/
+app/assets/
+*.ipynb

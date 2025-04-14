@@ -1,0 +1,7 @@
+.venv
+.env
+assets
+*.ipynb
+*.json
+*__pycache__/
+*.h5
