@@ -27,7 +27,7 @@ text-classification-api
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/pablosgs/text-classification-api
    cd text-classification-api
    ```
 
@@ -115,7 +115,3 @@ GOOGLE_APPLICATION_CREDENTIALS="path/to/credential-json"
 
 - Python 3.7+
 - Docker
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
